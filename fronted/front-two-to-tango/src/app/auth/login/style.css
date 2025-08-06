@@ -1,0 +1,36 @@
+*{
+
+}
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ghostwhite;   
+    height: 100vh;
+}
+.form-container{
+    color: #171717;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 20%;
+    border: 1px solid #ccc;  
+}
+form{
+    display: flex;
+    flex-direction: column;
+  }
+  input{
+    border: 1px solid #ccc;  
+  }
+
+.input-email{
+    display: flex;
+    flex-direction: column;
+}
+.input-password{
+    display: flex;
+    flex-direction: column;
+}

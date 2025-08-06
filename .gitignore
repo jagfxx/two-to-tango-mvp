@@ -1,0 +1,47 @@
+# Dependencias instaladas por npm (no deben subirse al repo)
+node_modules/
+
+# Carpeta de compilación generada por Next.js
+.next/
+
+# Carpeta de exportación estática (solo si usas `next export`)
+out/
+
+# Archivos de cobertura de pruebas (si usas herramientas como Jest)
+coverage/
+
+# Archivos de registro (errores de npm, yarn o pnpm)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos de lock según el gestor de paquetes que uses (opcional ignorarlos si no quieres versionarlos)
+package-lock.json
+yarn.lock
+.pnpm/
+
+# Archivos de construcción de TypeScript (si usas TS)
+*.tsbuildinfo
+
+# 🛠️ Configuración local del editor VSCode o JetBrains
+.vscode/
+.idea/
+*.swp  # Archivos temporales de edición (ej: Vim)
+
+# Archivos de configuración del entorno local (variables de entorno)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Carpeta de telemetría (uso anónimo que envía Next.js)
+.next/telemetry
+
+# Archivos innecesarios generados por el sistema operativo
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Configuración local de despliegue en Vercel
+.vercel/

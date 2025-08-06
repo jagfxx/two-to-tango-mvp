@@ -1,0 +1,22 @@
+.main{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.navbar{
+    display: flex;
+    height: 100px;
+    background-color: aliceblue;
+    color: rgb(24, 18, 60);
+
+}
+.logo-container{
+    display: flex;
+}
+.logo-container img{
+    height: 30px;
+}
+.logotext{
+    display: flex;
+}

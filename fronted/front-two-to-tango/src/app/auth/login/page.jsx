@@ -20,41 +20,47 @@ export default function Login() {
   };
 
   // Manejador para el envio del formulario
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Evita recargar la pagina
-    console.log('Intento de inicio de sesion con:', formData);
-
-    // Validacion simple de credenciales (simulada)
-    if (formData.email === "test@correo.com" && formData.password === "123") {
-      // Guardar token simulado y correo en el localStorage
-      localStorage.setItem("token", "simulated-jwt-token");
-      localStorage.setItem("userEmail", formData.email);
-
-      // Redirigir a la pagina de eventos
-      window.location.href = "/events";
-    } else {
-      alert("Credenciales invalidas");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+    try {
+      const res = await fetch(`${API_URL}/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (res.ok && data.access_token) {
+        localStorage.setItem("token", data.access_token);
+        localStorage.setItem("userEmail", formData.email);
+        window.location.href = "/events";
+      } else {
+        alert(data.message || "Credenciales invalidas");
+      }
+    } catch (err) {
+      alert("Error de red o backend");
     }
   };
 
   return (
-    <section className="main-container">
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <div className="input-email">
-            <label htmlFor="email">Email:</label>
+    <section className="min-h-screen flex items-center justify-center bg-white">
+      <div className="w-full max-w-md bg-white p-8 rounded border border-gray-200">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="email" className="block text-black font-semibold mb-1">Email:</label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
+              className="block w-full p-2 pl-10 text-sm text-gray-700 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
 
-          <div className="input-password">
-            <label htmlFor="password">Password:</label>
+          <div className="mb-4">
+            <label htmlFor="password" className="block text-black font-semibold mb-1">Contraseña:</label>
             <input
               type="password"
               id="password"
@@ -62,11 +68,19 @@ export default function Login() {
               value={formData.password}
               onChange={handleChange}
               required
+              className="block w-full p-2 pl-10 text-sm text-gray-700 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
 
-          <button type="submit">Iniciar Sesion</button>
+          <button type="submit" className="w-full bg-white border border-gray-300 text-black py-2 rounded hover:bg-gray-100 transition font-semibold">Iniciar Sesión</button>
         </form>
+        {/* Enlace para ir a la página de registro */}
+        {/* Enlace para ir a la página de registro */}
+        <div className="mt-4 text-center">
+          <a href="/auth/register" className="text-black hover:underline">
+            ¿No tienes cuenta? Regístrate aquí
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -1,20 +1,16 @@
 # two to tango - mi solucion
 
-## de que va esto
-
-construi esta aplicacion como parte de una prueba tecnica. es una plataforma donde puedes encontrar y organizar eventos sociales. la idea es simple: creas un evento, la gente se apunta, y todos lo pasan bien. use next.js para el front y nestjs para el backend, con postgresql como base de datos.
-
 ## que puedes hacer
 
 ### para empezar
 - crea una cuenta con tu email y contraseña
-- inicia sesion y empieza a explorar
+- inicia sesion 
 - las rutas estan protegidas, asi que necesitaras estar autenticado
 
 ### eventos
 - crea eventos facilmente: solo necesitas un titulo, descripcion, fecha y lugar
-- echa un vistazo a todos los eventos disponibles
-- revisa los detalles de cada evento antes de apuntarte
+- vista a todos los eventos disponibles
+- revisa los detalles de cada evento 
 - usa el boton de rsvp para confirmar tu asistencia
 
 ### tu perfil
@@ -45,7 +41,7 @@ two-to-tango-mvp/
 
 ## lo que necesitas para empezar
 
-antes de emocionarte, asegurate de tener esto instalado:
+asegurate de tener esto instalado:
 
 - node.js v18 o mas reciente (yo uso la 18.16.0)
 - npm (viene con node) o yarn si lo prefieres
@@ -56,12 +52,12 @@ antes de emocionarte, asegurate de tener esto instalado:
 
 ### primero el backend
 
-1. abri una terminal y metete en la carpeta del backend:
+1. abre una terminal y entra en la carpeta del backend:
    ```bash
    cd backend
    ```
 
-2. instala todo lo que necesites (paciencia, esto puede tardar un poco):
+2. instala todo lo que necesites:
    ```bash
    npm install
    ```
@@ -115,7 +111,7 @@ si prefieres crear tu propia cuenta, adelante. solo necesitas un email valido y 
 
 ## como funciona por dentro
 
-te cuento un poco sobre la api. primero que nada, casi todos los endpoints necesitan que estes autenticado (solo el registro y login son publicos).
+te cuento un poco sobre la api. todos los endpoints necesitan que estes autenticado (solo el registro y login son publicos).
 
 ### autenticacion
 
@@ -142,36 +138,17 @@ si quieres probar rapido, importa la coleccion de postman que esta en la raiz de
 
 ## con que esta hecho esto
 
-te cuento un poco de la cocina de esta aplicacion:
 
 ### frontend
-- **next.js 14** - el framework que uso para el front, me encanta por lo facil que hace el routing
-- **react 19** - la version mas reciente, con todos los hooks que necesitas
-- **tailwindcss** - para los estilos, sin tener que cambiar de archivo
-- **next-auth** - para manejar las sesiones sin volverme loco
+- **next.js 14** 
+- **react 19** 
+- **tailwindcss** 
+- **next-auth**
 
 ### backend
-- **nestjs** - un framework de node.js que me gusta mucho por su estructura
-- **typescript** - porque javascript a pelo me da miedo
-- **prisma** - el orm que me salva la vida con la base de datos
-- **postgresql** - la base de datos que elegi por su robustez
-- **jsonwebtoken** - para la autenticacion, sin complicarme demasiado
+- **nestjs** 
+- **typescript** 
+- **prisma** 
+- **postgresql** 
+- **jsonwebtoken** 
 
-si te interesa como esta hecho algo en particular, dime y te cuento con mas detalle.
-
-## cosas que me gustaria mejorar
-
-si tuviera mas tiempo (y ganas), estas son algunas mejoras que me gustaria hacer:
-
-- **sistema de intereses** - para sugerir eventos o gente con gustos similares
-- **busqueda avanzada** - filtrar eventos por fecha, ubicacion, etc.
-- **notificaciones** - avisos cuando alguien se apunta a tu evento
-- **fotos** - subir imagenes para los eventos
-- **chat** - para que la gente pueda hablar entre si
-- **calendario** - ver los eventos en formato calendario
-
-si tienes alguna idea o sugerencia, dime y la anoto. siempre estoy abierto a mejoras.
-
-## licencia
-
-este proyecto esta bajo la licencia mit. ver el archivo `license` para mas detalles.
